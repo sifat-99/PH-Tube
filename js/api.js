@@ -10,9 +10,12 @@ function displayMenu(data)
 for(let i=0; i<data.length; i++)
 {
     const menuListName = data[i].category;
+    const menuListId = data[i].category_id;
     const button = document.createElement('button');
-    button.innerHTML = `${menuListName}`
-    button.classList.add('btn','text-black','rounded-none','bg-[#25252526]',);
+    button.innerHTML = `
+    <a id="${menuListId}" >${menuListName}</a>
+    `
+    button.classList.add('btn','text-black','rounded-md','bg-[#25252526]',);
     menu.appendChild(button);
     // console.log(button)
 }
@@ -31,9 +34,9 @@ function showCard(card)
         const dataContainerCard = document.getElementById('card-container');
     // console.log(card)
     const div = document.createElement('div');
-    div.classList.add('card','width-auto','rounded-lg','bg-[#25252526]','shadow-xl');
+    div.classList.add('card','card-compact','width-auto','rounded-lg','bg-[#25252526]','shadow-xl');
     div.innerHTML = `
-    <figure><img class="h-[200px]" src="${card.thumbnail}" alt="Shoes" /></figure>
+    <figure><img class="h-[200px] w-full" src="${card.thumbnail}" alt="Shoes" /></figure>
     <div class="card-body p-2">
             <div class="flex items-center gap-3">
             <img class="w-10 h-10 rounded-full" src="${card.authors[0].profile_picture}"alt="" />
