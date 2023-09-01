@@ -47,7 +47,7 @@
       }
     </style>
   </head>
-  <body class="  container mx-auto pt-12 pb-2">
+  <body class=" px-7 md:container mx-auto pt-12 pb-2">
     <header class="border-b-2 border-gray-500">
       <div class="navbar bg-base-100 items-center pb-10">
         <div class="navbar-start">
@@ -55,41 +55,34 @@
         </div>
         <div class="navbar-center lg:flex">
           <button
-            class="btn bg-[#25252526] text-primaryColor rounded-md px-5 normal-case text-lg hover:bg-blue-600 hover:text-emerald-50" id="sort-button"
+            class="btn bg-[#25252526] text-primaryColor rounded-md px-5 normal-case text-lg hover:bg-blue-600 hover:text-emerald-50"
+            id="sort-button"
           >
             Sort by view
           </button>
         </div>
         <div class="navbar-end">
-          <a class="btn bg-btnColor text-white hover:bg-green-400 hover:text-black normal-case text-lg rounded-md" href="./blog.html">Blog</a>
+          <a
+            class="btn bg-btnColor text-white hover:bg-green-400 hover:text-black normal-case text-lg rounded-md"
+            href="./blog.html"
+            >Blog</a
+          >
         </div>
       </div>
     </header>
     <main>
       <!-- Menu bar Items section-->
-      <section class="pt-8">
+      <section class="pt-8 w-full  xl:w-1/2  mx-auto">
         <ul
           id="menu-items"
-          class="flex gap-10 justify-center items-center"
+          class="grid grid-cols-2 md:grid-cols-4 gap-10 justify-center w-full mx-auto items-center"
         ></ul>
       </section>
       <!-- main data containers -->
-      <section id="card-container" class="pt-10 grid grid-cols-4 gap-6">
-        <!-- <div class="card w-auto bg-base-100 shadow-xl">
-          <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-          <div class="card-body">
-            <h2 class="card-title">
-              Shoes!
-              <div class="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <div class="badge badge-outline">Fashion</div> 
-              <div class="badge badge-outline">Products</div>
-            </div>
-          </div>
-        </div> -->
-      </section>
+      <section
+        id="card-container"
+        class="pt-10 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-6"
+      ></section>
       <section id="card-empty-container" class="pt-10 h-full">
         <!-- <div class="card w-auto bg-base-100 shadow-xl">
           <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>

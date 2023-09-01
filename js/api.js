@@ -15,7 +15,7 @@ for(let i=0; i<data.length; i++)
 if(menuListId==1000)
 {
     button.innerHTML = `
-    <a class="px-4 py-4 " id="${menuListId}" onclick="btnClicked(this)" >${menuListName}</a>
+    <a class="px-4 py-4" id="${menuListId}" onclick="btnClicked(this)" >${menuListName}</a>
     `
 }
 else
@@ -27,7 +27,7 @@ else
 
 
     
-    button.classList.add('p-4','font-semibold','text-black','rounded-md','bg-[#25252526]','hover:bg-blue-500','hover:text-white');
+    button.classList.add('p-4','w-auto','font-semibold','text-black','rounded-md','bg-[#25252526]','hover:bg-blue-500','hover:text-white');
     menu.appendChild(button);
 }
 }
@@ -87,9 +87,9 @@ function showCard(card,buttonID)
     {
         card.forEach(card => {
         const div = document.createElement('div');
-        div.classList.add('card','card-compact','width-auto','rounded-lg','bg-[#25252526]','shadow-xl');
+        div.classList.add('card','card-compact','flex','justify-centre','mx-auto','w-[355px]','md:w-auto','rounded-lg','bg-[#25252526]','shadow-xl');
         div.innerHTML = `
-        <figure class="relative"><img class="h-[200px] w-full" src="${card.thumbnail}" alt="Shoes" />
+        <figure class="relative"><img class="h-[200px] w-[340px]" src="${card.thumbnail}" alt="Shoes" />
         <div class="absolute right-1 bottom-1 border border-none bg-black text-white px-2 rounded-md text-[10px] font-normal">${secondsToHms(card.others.posted_date) }</div>
         </figure>
         <div class="card-body p-2">
