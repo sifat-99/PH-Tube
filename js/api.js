@@ -15,28 +15,52 @@ for(let i=0; i<data.length; i++)
 if(menuListId==1000)
 {
     button.innerHTML = `
-    <a id="${menuListId}" onclick="btnClicked(this)" >${menuListName}</a>
+    <a class="px-4 py-4" id="${menuListId}" onclick="btnClicked(this)" >${menuListName}</a>
     `
 }
 else
 {
     button.innerHTML = `
-    <a id="${menuListId}" onclick="btnClicked(this)" >${menuListName}</a>
+    <a class="px-4 py-4" id="${menuListId}" onclick="btnClicked(this)" >${menuListName}</a>
     `
 }
 
 
     
-    button.classList.add('btn','text-black','rounded-md','bg-[#25252526]',);
+    button.classList.add('p-4','text-black','rounded-md','bg-[#25252526]',);
     menu.appendChild(button);
 }
 }
+const btnShortByView = document.getElementById("sort-button");
+
 const loadContent = async (buttonID)=>{
     const response = await fetch (`https://openapi.programming-hero.com/api/videos/category/${buttonID}`)
     const dataContainer = await response.json();
+
+    const watchTime = dataContainer.data;
     showCard(dataContainer.data,buttonID)
+    // showCard(watchTime);
+    // console.log(watchTime)
+
+    btnShortByView.addEventListener('click',()=>{
+        sortByView(watchTime);
+        // console.log(watchTime)
+        showCard(watchTime);
+    })
+    
     
 }
+// Sort by date Function 
+
+const sortByView = data => {
+    document.getElementById('card-container').innerHTML = '';
+    data.sort(function (a, b) {
+        return parseFloat(b.others.views) - parseInt(a.others.views);
+    });
+    // showCard(data);
+  }
+
+
 
 function showCard(card,buttonID)
 {
@@ -47,7 +71,7 @@ function showCard(card,buttonID)
 
     if(buttonID==1005)
     {
-        console.log(dataContainerCard2.innerHTML)
+        // console.log(dataContainerCard2.innerHTML)
         const div = document.createElement('div');
         div.classList.add('w-full','items-centre','justify-centre','container','h-auto');
         div.innerHTML = `
@@ -92,7 +116,7 @@ function btnClicked(button)
 {
     const buttonID = button.id;
         loadContent(buttonID);
-
+    const buttonBox = document.getElementById(buttonID)
 }
 function secondsToHms(posted_date) {
     number = Number(posted_date);
@@ -103,7 +127,8 @@ function secondsToHms(posted_date) {
     return hourDisplay + minutesDisplay ;
 }
 
-loadContent();
+loadContent(1000);
 
 loadMenu();
+
 

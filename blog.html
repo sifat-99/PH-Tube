@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Of PH Tube</title>
+    <!-- for using daisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./image/favIcon.png" type="image/x-icon" />
+    <!-- For Using Theme -->
+    <html data-theme="cupcake"></html>
+    <!-- For Using custom google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- For custom color script od tailwind -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primaryColor: "#252525",
+              btnColor: "#FF1F3D",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- custom font family name -->
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: "Inter", sans-serif;
+      }
+      .font-inter {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main class="container mx-auto my-40 grid gap-12">
+        <!-- Let,Var and Const -->
+        <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" checked="checked" /> 
+            <div class="collapse-title text-xl font-medium">
+              Something about let,var & const
+            </div>
+            <div class="collapse-content"> 
+                <div class="join join-vertical w-full">
+                    <div class="collapse collapse-arrow join-item border border-base-300">
+                      <input type="radio" name="my-accordion-4" checked="checked" /> 
+                      <div class="collapse-title text-xl font-medium">
+                        <p class="text-center text-3xl font-bold">Var</p>
+                      </div>
+                      <div class="collapse-content"> 
+                        
+              <p class="flex flex-col"><span class="text-xl font-black">Function-Scoped:</span> <span class="text-base text-justify px-4">Variables declared with <strong>'var'</strong> are function-scoped, which means they are only accessible within the function in which they are defined.</span></p>
+              <p class="flex flex-col pt-4"><span class="text-xl font-black">Hoisting:</span> <span class="text-base text-justify px-4"> Variables declared with <strong>'var'</strong> are hoisted to the top of their containing function or global scope. This means you can access a var variable before it's declared, but it will have an initial value of <strong>'undefined'</strong> until it's assigned a value.</span></p>
+              <p class="flex flex-col pt-4"><span class="text-xl font-black">Reassignment:</span> <span class="text-base text-justify px-4"> You can reassign  <strong>'var'</strong> variables within their scope.</strong> until it's assigned a value.</span></p>
+                      </div>
+                    </div>
+                    <div class="collapse collapse-arrow join-item border border-base-300">
+                      <input type="radio" name="my-accordion-4" /> 
+                      <div class="collapse-title text-xl font-medium">
+                        <p class="text-center text-3xl font-bold">Let</p>
+                      </div>
+                      <div class="collapse-content"> 
+                        
+              <p class="flex flex-col"><span class="text-xl font-black">Block-Scoped:</span> <span class="text-base text-justify px-4"> Variables declared with <strong>'let' </strong>are block-scoped, which means they are only accessible within the block (e.g., if statement, for loop, or function) in which they are defined.</span></p>
+              <p class="flex flex-col pt-4"><span class="text-xl font-black">Hoisting:</span> <span class="text-base text-justify px-4"> Like <strong>'var', 'let' </strong>variables are hoisted, but they are not initialized until the line of code where they are declared is executed. This is known as the "temporal dead zone."</p>
+              <p class="flex flex-col pt-4"><span class="text-xl font-black">Reassignment:</span> <span class="text-base text-justify px-4"> You can reassign <strong>'let'</strong> variables within their block scope.</span></p>
+                      </div>
+                    </div>
+                    <div class="collapse collapse-arrow join-item border border-base-300">
+                      <input type="radio" name="my-accordion-4" /> 
+                      <div class="collapse-title text-xl font-medium">
+                        <p class="text-3xl text-center font-bold">Const</p>
+                      </div>
+                      <div class="collapse-content"> 
+                        <p class="flex flex-col"><span class="text-xl font-black">Block-Scoped:</span> <span class="text-base text-justify px-4"> Variables declared with <strong>'const'</strong> are also block-scoped, just like <strong>'let'</strong></span></p>
+                        <p class="flex flex-col pt-4"><span class="text-xl font-black">Immutability:</span> <span class="text-base text-justify px-4"> <strong>'const'</strong> variables are meant to be constants, meaning their value cannot be reassigned after declaration. However, for objects and arrays declared with <strong>'const'</strong>, you can still modify their properties or elements.</p>
+                        <p class="flex flex-col pt-4"><span class="text-xl font-black">Reassignment:</span> <span class="text-base text-justify px-4"> Similar to <strong>'let'</strong>, const variables are hoisted but not initialized until the line where they are declared is executed.</span></p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" /> 
+            <div class="collapse-title text-xl font-medium">
+              Something About Null and Undefined
+            </div>
+            <div class="collapse-content"> 
+                <div class="collapse bg-base-200">
+                    <input type="radio" name="my-accordion-1" checked="checked" /> 
+                    <div class="collapse-title text-xl font-medium">
+                      Click to open this one and close others
+                    </div>
+                    <div class="collapse-content"> 
+                      <p>hello</p>
+                    </div>
+                  </div>
+                  <div class="collapse bg-base-200">
+                    <input type="radio" name="my-accordion-1" /> 
+                    <div class="collapse-title text-xl font-medium">
+                      Click to open this one and close others
+                    </div>
+                    <div class="collapse-content"> 
+                      <p>hello</p>
+                    </div>
+                  </div>
+                  <div class="collapse bg-base-200">
+                    <input type="radio" name="my-accordion-1" /> 
+                    <div class="collapse-title text-xl font-medium">
+                      Click to open this one and close others
+                    </div>
+                    <div class="collapse-content"> 
+                      <p>hello</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" /> 
+            <div class="collapse-title text-xl font-medium">
+              Click to open this one and close others
+            </div>
+            <div class="collapse-content"> 
+              <p>hello</p>
+            </div>
+          </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
