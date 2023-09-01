@@ -46,18 +46,23 @@
       }
     </style>
   </head>
-  <body>
-    <header></header>
+  <body class="bg-purple-300 h-screen py-10">
+    <header class="container mx-auto ">
+        <div class="navbar h-12 bg-red-400 rounded-xl flex justify-between px-10">
+            <a class="btn btn-ghost normal-case text-xl text-white">Sif's Blog</a>
+            <button class="text-white text-2xl btn btn-primary bg-purple-400 hover:bg-green-600"><a href="./index.html">Home</a></button>
+          </div>
+    </header>
     <main class="container mx-auto my-40 grid gap-12">
         <!-- Let,Var and Const -->
         <div class="collapse collapse-plus bg-base-200">
             <input type="radio" name="my-accordion-3" checked="checked" /> 
             <div class="collapse-title text-xl font-medium">
-              Something about let,var & const
+              Something about <strong>let,var & const</strong>
             </div>
             <div class="collapse-content"> 
                 <div class="join join-vertical w-full">
-                    <div class="collapse collapse-arrow join-item border border-base-300">
+                    <div class="collapse  join-item border border-base-300">
                       <input type="radio" name="my-accordion-4" checked="checked" /> 
                       <div class="collapse-title text-xl font-medium">
                         <p class="text-center text-3xl font-bold">Var</p>
@@ -69,7 +74,7 @@
               <p class="flex flex-col pt-4"><span class="text-xl font-black">Reassignment:</span> <span class="text-base text-justify px-4"> You can reassign  <strong>'var'</strong> variables within their scope.</strong> until it's assigned a value.</span></p>
                       </div>
                     </div>
-                    <div class="collapse collapse-arrow join-item border border-base-300">
+                    <div class="collapse  join-item border border-base-300">
                       <input type="radio" name="my-accordion-4" /> 
                       <div class="collapse-title text-xl font-medium">
                         <p class="text-center text-3xl font-bold">Let</p>
@@ -81,7 +86,7 @@
               <p class="flex flex-col pt-4"><span class="text-xl font-black">Reassignment:</span> <span class="text-base text-justify px-4"> You can reassign <strong>'let'</strong> variables within their block scope.</span></p>
                       </div>
                     </div>
-                    <div class="collapse collapse-arrow join-item border border-base-300">
+                    <div class="collapse  join-item border border-base-300">
                       <input type="radio" name="my-accordion-4" /> 
                       <div class="collapse-title text-xl font-medium">
                         <p class="text-3xl text-center font-bold">Const</p>
@@ -95,37 +100,35 @@
                   </div>
             </div>
           </div>
+          <!-- Null and Undefined -->
           <div class="collapse collapse-plus bg-base-200">
             <input type="radio" name="my-accordion-3" /> 
             <div class="collapse-title text-xl font-medium">
-              Something About Null and Undefined
+              Something About <strong>Null</strong> and <strong>Undefined</strong>
             </div>
             <div class="collapse-content"> 
                 <div class="collapse bg-base-200">
                     <input type="radio" name="my-accordion-1" checked="checked" /> 
                     <div class="collapse-title text-xl font-medium">
-                      Click to open this one and close others
+                        <p class="text-3xl text-center font-bold">Null</p>
                     </div>
                     <div class="collapse-content"> 
-                      <p>hello</p>
+                        <p class="flex flex-col"><span class="text-xl font-black">Intentional Absence of Value:</span> <span class="text-base text-justify px-4"> <strong>'null'</strong> is often used to indicate that a variable intentionally lacks a value or that a value is explicitly empty.</span></p>
+                        <p class="flex flex-col pt-4"><span class="text-xl font-black">Initialization:</span> <span class="text-base text-justify px-4"> You can initialize a variable with <strong>'null'</strong> when you want to signify that it will be assigned a meaningful value later.</p>
+                        <p class="flex flex-col pt-4"><span class="text-xl font-black">As a Placeholder: </span> <span class="text-base text-justify px-4"> Sometimes, <strong>'null'</strong> is used as a placeholder for an object or value that is expected but not available at the moment.</p>
+                        <p class="flex flex-col pt-4"><span class="text-xl font-black">Comparisons:</span> <span class="text-base text-justify px-4"> You can compare a variable to <strong>'null'</strong> to check if it has been assigned a meaningful value yet.</span></p>
                     </div>
                   </div>
                   <div class="collapse bg-base-200">
                     <input type="radio" name="my-accordion-1" /> 
                     <div class="collapse-title text-xl font-medium">
-                      Click to open this one and close others
+                        <p class="text-3xl text-center font-bold">Undefined</p>
                     </div>
                     <div class="collapse-content"> 
-                      <p>hello</p>
-                    </div>
-                  </div>
-                  <div class="collapse bg-base-200">
-                    <input type="radio" name="my-accordion-1" /> 
-                    <div class="collapse-title text-xl font-medium">
-                      Click to open this one and close others
-                    </div>
-                    <div class="collapse-content"> 
-                      <p>hello</p>
+                        <p class="flex flex-col"><span class="text-xl font-black">Implicit Absence of Value:</span> <span class="text-base text-justify px-4"> <strong>'undefined'</strong> typically indicates that a variable has been declared but has not been assigned any value. It represents the implicit absence of a value.</span></p>
+                        <p class="flex flex-col pt-4"><span class="text-xl font-black">Function Parameters:</span> <span class="text-base text-justify px-4"> Function parameters that are not provided when the function is called are <strong>'undefined'</strong> by default.</p>
+                        <p class="flex flex-col pt-4"><span class="text-xl font-black">Array Elements: </span> <span class="text-base text-justify px-4"> If you access an index in an array that does not exist, you'll get <strong>'undefined'</strong>.</span></p>
+                        <p class="flex flex-col pt-4"><span class="text-xl font-black">Object Properties: </span> <span class="text-base text-justify px-4"> When you try to access an object property that doesn't exist, it returns <strong>'undefined'</strong>.</span></p>
                     </div>
                   </div>
             </div>
@@ -133,10 +136,12 @@
           <div class="collapse collapse-plus bg-base-200">
             <input type="radio" name="my-accordion-3" /> 
             <div class="collapse-title text-xl font-medium">
-              Click to open this one and close others
+              Something About <strong>REST API</strong>
             </div>
             <div class="collapse-content"> 
-              <p>hello</p>
+                <p class="flex flex-col"><span class="text-xl font-medium text-justify">
+                    REST API stands for Representational State Transfer Application Programming Interface. It is a set of architectural principles and constraints for designing networked applications and services. REST is not a specific technology or protocol; rather, it is a style of designing web services that rely on the existing protocols and standards of the World Wide Web, primarily using HTTP (Hypertext Transfer Protocol).
+                </span></p>
             </div>
           </div>
     </main>

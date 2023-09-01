@@ -15,7 +15,7 @@ for(let i=0; i<data.length; i++)
 if(menuListId==1000)
 {
     button.innerHTML = `
-    <a class="px-4 py-4" id="${menuListId}" onclick="btnClicked(this)" >${menuListName}</a>
+    <a class="px-4 py-4 " id="${menuListId}" onclick="btnClicked(this)" >${menuListName}</a>
     `
 }
 else
@@ -27,7 +27,7 @@ else
 
 
     
-    button.classList.add('p-4','text-black','rounded-md','bg-[#25252526]',);
+    button.classList.add('p-4','font-semibold','text-black','rounded-md','bg-[#25252526]','hover:bg-blue-500','hover:text-white');
     menu.appendChild(button);
 }
 }
