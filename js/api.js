@@ -12,29 +12,40 @@ for(let i=0; i<data.length; i++)
     const menuListName = data[i].category;
     const menuListId = data[i].category_id;
     const button = document.createElement('button');
+if(menuListId==1000)
+{
     button.innerHTML = `
     <a id="${menuListId}" onclick="btnClicked(this)" >${menuListName}</a>
     `
-    // button.onclick(btnClicked(this));
+}
+else
+{
+    button.innerHTML = `
+    <a id="${menuListId}" onclick="btnClicked(this)" >${menuListName}</a>
+    `
+}
+
+
+    
     button.classList.add('btn','text-black','rounded-md','bg-[#25252526]',);
     menu.appendChild(button);
-    // console.log(button)
 }
 }
 const loadContent = async (buttonID)=>{
-    const response = await fetch (`https://openapi.programming-hero.com/api/videos/category/${1000}`)
+    const response = await fetch (`https://openapi.programming-hero.com/api/videos/category/${buttonID}`)
     const dataContainer = await response.json();
-    // console.log(dataContainer.data);
-    showCard(dataContainer.data);
+    showCard(dataContainer.data,buttonID)
+    
 }
 
-function showCard(card)
+function showCard(card,buttonID)
 {
     const dataContainerCard = document.getElementById('card-container');
     const dataContainerCard2 = document.getElementById('card-empty-container');
     dataContainerCard.textContent = ' ';
     dataContainerCard2.textContent = ' ';
-    if(card.length<=0)
+
+    if(buttonID==1005)
     {
         console.log(dataContainerCard2.innerHTML)
         const div = document.createElement('div');
@@ -48,45 +59,51 @@ function showCard(card)
         `
         dataContainerCard2.appendChild(div);
     }
-    else
+    else if(card.length > 0)
     {
         card.forEach(card => {
-            // console.log(card.thumbnail)
-            
-        // console.log(card)
         const div = document.createElement('div');
         div.classList.add('card','card-compact','width-auto','rounded-lg','bg-[#25252526]','shadow-xl');
         div.innerHTML = `
-        <figure><img class="h-[200px] w-full" src="${card.thumbnail}" alt="Shoes" /></figure>
+        <figure class="relative"><img class="h-[200px] w-full" src="${card.thumbnail}" alt="Shoes" />
+        <div class="absolute right-1 bottom-1 border border-none bg-black text-white px-2 rounded-md text-[10px] font-normal">${secondsToHms(card.others.posted_date) }</div>
+        </figure>
         <div class="card-body p-2">
-                <div class="flex items-center gap-3">
+                <div class="flex  gap-3">
                 <img class="w-10 h-10 rounded-full" src="${card?.authors[0]?.profile_picture}"alt="" />
+                <div class="grid gap-3">
                 <h2 class="text-[16px] font-bold">${card?.title}</h2>
+                <div class= "grid grid-flow-col gap-2">
+                <p class="w-auto flex gap-3 text-[#171717B3]">${card?.authors[0]?.profile_name} ${card.authors[0]?.verified?'<img src="../image/verified.png"': ' '} </p>
                 </div>
-                <div class= "flex">
-                <p>${card?.authors[0]?.profile_name}</p>
-                <p>${card.authors[0]?.verified?'<img src= "../image/verified.png"': ' '}</p>
-                </div>
-                <div class="card-actions justify-end">
+                <p class="text-[#171717B3]">${card?.others.views}</p>
         </div>
-    
-    
+                
+                </div>
+                </div>
+                
         `
         dataContainerCard.appendChild(div);
-        // console.log(dataContainerCard.innerHTML)
         });
     }
-
-
     
+}
+function btnClicked(button)
+{
+    const buttonID = button.id;
+        loadContent(buttonID);
+
+}
+function secondsToHms(posted_date) {
+    number = Number(posted_date);
+    const hours = Math.floor(number / 3600);
+    const minutes = Math.floor(number % 3600 / 60);
+    const hourDisplay = hours > 0 ? hours + (hours == 1 ? " hour, " : " hours ") : "";
+    const minutesDisplay = minutes > 0 ? minutes + (minutes == 1 ? " minute, " : " minutes ago") : "";
+    return hourDisplay + minutesDisplay ;
 }
 
 loadContent();
 
 loadMenu();
 
-function btnClicked(button)
-{
-    const buttonID = button.id;
-    loadContent(buttonID);
-}
